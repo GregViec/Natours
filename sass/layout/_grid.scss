@@ -1,9 +1,16 @@
 .grid {
-  max-width: 114rem;
+  max-width: $grid-width;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: $gap-vertical $gap-horizontal;
   margin: 0 auto;
+
+  @include respond(tab-port) {
+    grid-template-columns: auto;
+    gap: $gap-vertical-small 0;
+    max-width: $grid-width-small;
+    padding: 0 3rem;
+  }
 }
 
 .col-1-of-4 {

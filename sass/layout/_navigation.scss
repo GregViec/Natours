@@ -14,6 +14,15 @@
     box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
     text-align: center;
     cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
   &__background {
     height: 6rem;
@@ -29,6 +38,15 @@
     z-index: 1000;
 
     transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
   &__nav {
     height: 100vh;
@@ -36,9 +54,7 @@
     top: 0;
     left: 0;
     z-index: 1500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
 
     opacity: 0;
     width: 0;
@@ -95,6 +111,9 @@
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   // ICON
